@@ -88,7 +88,7 @@ To get your image URL, go to your GitHub repository on your web browser and navi
 
 ![CopyImageAddress](https://github.com/AguaClara/aguaclara_tutorial/wiki/Images/CopyImageAddress.png)
 
-When you're trying to insert an image that's stored in a folder in the same repository as your Markdown file, you can use a relative file path to that image to insert it rather than using a URL. For example, the relative file path for the Cornell seal image you see in here is `/Images/Cornell_University_seal.svg.png`. Notice how the first part of the path is the folder within this repository where I store my images, and the second part is the image file name and extension.
+When you're trying to insert an image that's stored in a folder in the same repository as your Markdown file, you can use a relative file path to that image to insert it rather than using a URL. For example, the relative file path for the Cornell seal image you see in here is `/Images/Cornell_University_seal.svg.png`. Notice how the first part of the path is the folder within this repository where I store my images, and the second part is the image file name and extension. 
 
 There are several ways to import an image.
 * You can import an image unformatted by using this source code `![Some_Description_of_the_Image](YOUR IMAGE URL or /path/to/image.ext)`
