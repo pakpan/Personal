@@ -18,7 +18,7 @@ You can find a GitHub tutorial [here](https://github.com/AguaClara/aguaclara_tut
 
 1. Below this, write a sentence or two about yourself:
 
-<!--- Fill you answer here. --->
+My name is Philip Akpan.
 
 
 
@@ -44,7 +44,7 @@ To signify a header, use `#`. The more `#` you use, the smaller the header gets.
 
 1. Make a header of similar size as Header 3 with whatever text you want:
 
-<!--- Fill you answer here. --->
+### Our Fluoride probe is bad
 
 ## Emphasis
 There are several different ways to emphasize text: *italics*, **bold**, ***combined***, and ~~strikethrough~~.
@@ -56,7 +56,11 @@ There are several different ways to emphasize text: *italics*, **bold**, ***comb
 
 1. Write 4 of your favorite words using each type of emphasis:
 
-<!--- Fill you answer here. --->
+* *food*
+* **food**
+* ***food***
+* ~~bad food~~
+
 
 
 ## Lists
@@ -68,7 +72,14 @@ Lists are very easy to do. For a bulleted list, use the asterisk and for a numbe
 
 1. Now try it out for yourself. Write down a list of things you hope to achieve this semester, and elaborate on them with sub items:
 
-<!--- Fill you answer here. --->
+
+* Have fun with my Subteam
+  - Force them to hang out with me
+* Get some useful research done
+  - Attempt to create a bench scale, hydraulic fluoride removal setup
+* Graduate
+* Get a job
+
 
 ## Images
 To input images, you'll either need an image URL or a file path to your image. For AguaClara work, your repository should have a folder for images where you can get an image URL or file path from. In this tutorial, I've made an image folder with a picture in the `aguaclara_tutorial` repository.
@@ -274,7 +285,7 @@ In this section you and your team can practice using Teletype together.
 
 1. Create a portal for your team members to join. Have them write you words of  encouragement in the space below, and be sure they sign their name next to their encouragements.
 
-<!--- Fill you answer here. --->
+Good Job! - Victoria
 
 
 
