@@ -88,7 +88,7 @@ To get your image URL, go to your GitHub repository on your web browser and navi
 
 ![CopyImageAddress](https://github.com/AguaClara/aguaclara_tutorial/wiki/Images/CopyImageAddress.png)
 
-When you're trying to insert an image that's stored in a folder in the same repository as your Markdown file, you can use a relative file path to that image to insert it rather than using a URL. For example, the relative file path for the Cornell seal image you see in here is `/Images/Cornell_University_seal.svg.png`. Notice how the first part of the path is the folder within this repository where I store my images, and the second part is the image file name and extension. 
+When you're trying to insert an image that's stored in a folder in the same repository as your Markdown file, you can use a relative file path to that image to insert it rather than using a URL. For example, the relative file path for the Cornell seal image you see in here is `/Images/Cornell_University_seal.svg.png`. Notice how the first part of the path is the folder within this repository where I store my images, and the second part is the image file name and extension.
 
 There are several ways to import an image.
 * You can import an image unformatted by using this source code `![Some_Description_of_the_Image](YOUR IMAGE URL or /path/to/image.ext)`
@@ -126,7 +126,8 @@ To insert a link, all you have to do is enclose your linked text in `[]` followe
 
 1. Below, write a sentence describing your major, and insert a link to your major's department website.
 
-<!--- Fill you answer here. --->
+My major is environmental engineering in the BEE department. The website for the BEE department can be found
+[here](https://bee.cals.cornell.edu/).
 
 ## Tables
 Tables in Markdown are slightly harder, but there's an automatic function that allows to you make one easily. When working in a `.md` file, all you have to do is type `table` and hit enter. It will initialize a 2 by 2 table, but you can easily increase the width by going to the last column and hitting `Tab` or it's height by clicking in any cell and hitting `Enter`. Notice in the example how the text below the header is justified left, center, and right. This is due to the line below the header. A line with a colon on the far left of the dashes only indicates left justified, colons on both sides of the dashes indicates centered, and a colon on the far right of the dashes indicates right justified.
@@ -157,7 +158,11 @@ When making tables, it's not important that the lines match up. For example, the
 1. Create a table listing your 3 favorite animals, foods, books, and places on campus. Try out the different cell justifications:
 
 <!--- Fill you answer here. --->
-
+| Animals | Foods       | Books               | Places     |
+|:------- |:----------- | ------------------- | ---------- |
+| Penguin | Hamburgers  | Animal Farm         | Duffield   |
+| Panda   | Katsu don   | The Lightning Thief | Uris       |
+| Dogs    | Hash Browns | Catcher in the Rye  | Riley-Robb |
 
 
 ## Code and Syntax Highlighting
@@ -176,11 +181,15 @@ For larger code blocks where you report multiple lines of code, you always start
 1. Below, write a Python print function with a different string using syntax highlighting:
 
 <!--- Fill you answer here. --->
+`print("Hello World")`
 
 2. Now write a block of Python code for that same print statement:
 
 <!--- Fill you answer here. --->
 
+```python
+  print("Hello World")
+```
 
 
 ## LaTeX Equations
@@ -191,7 +200,7 @@ $$ Re_D = \frac{uD}{\nu} $$
 1. Try it on your own! Write your favorite equation using LaTeX source code and toggle the LaTeX preview to see it formatted:
 
 <!--- Fill you answer here. --->
-
+$$ h_{minor} = k\frac{v^2}{2g} $$
 
 # Using Python and Running it With Hydrogen in Markdown
 
@@ -227,35 +236,55 @@ These questions are meant to test what you've learned from the Python Basics tut
 1. Write a conditional statement with 3 conditions: when x is 10, when x is 1, and when x is anything other than 1 or 10. For each condition, have your code print what the value is or isn't.
 
 <!--- Fill you answer here. --->
-
-
+```python
+x = 0;
+if x == 10:
+  print('x is 10')
+elif x == 1:
+  print('x is 1')
+else:
+  print('x is neither 10 nor 1\n')
+```
 
 
 2. Write a `for` loop that takes a variable with an initial value of 0, and adds the current index to the previous value of that variable (i.e. you variable should grow in size every iteration). Perform the iteration 20 times, and have the final value be printed at the end.
 
 <!--- Fill you answer here. --->
-
-
-
-
-
-
-
+```python
+x = 0
+for i in range(20):
+  x = x + i
+  #print(i)
+print(x)
+```
 
 
 3. Using the NumPy package and `unit_registry`, calculate the value of sin(4) meters, and use the sigfig function from the unit unit_registry module in aide_design to get your answer to 2 sig-figs. *(Hint: You will need to import these packages. Remember how to do that?)*
 
 <!--- Fill you answer here. --->
-
-
+```python
+import numpy as np
+from aide_design import*
+x = np.sin(4)*u.meter
+xSig = utility.sig(x,2)
+print(xSig)
+```
 
 4. Create a `list` of length 5, and verify the length of your list. Once you've done that, turn your `list` into an `array` and apply units of meters to it. After that, create a 5x5 `array`, extract the middle row and middle column. Verify the size of your 2D `array` and apply units of liters to it.
 
 <!--- Fill you answer here. --->
-
-
-
-
+```python
+from aide_design.play import*
+myList = [1, 2, 3, 4, 5]
+print(len(myList))
+myArray = np.array(myList)
+myArray = myArray*u.meter
+my2DArray = np.array([[1 ,2, 3,4,5], [6, 7, 8,9,10], [11, 12, 13,14,15], [16,17,18,19,20], [21,22,23,24,25]])
+print("middle column: " + str(my2DArray[:,2]))
+print("middle row: " + str(my2DArray[2,:]))
+print(np.size(my2DArray))
+my2DArray = my2DArray*u.liter
+```
 
 
 
@@ -270,17 +299,47 @@ These questions are meant to test what you've learned from the Python Basics tut
 $$ D = \frac{k_BT}{6\pi\eta r} $$
 
 ```python
+from aide_design.play import*
 from scipy.constants import Boltzmann as kB_sc # I've imported the unitless value for kB from SciPy
 
 kB = kB_sc * u.joule / u.kelvin # I've given kB units for you in J/K; you can use the kB variable to give you Boltzmann's constant with units
 
 # Write your code here
-
+def stokesEinstein(T, eta, r):
+  kB = kB_sc * u.joule / u.kelvin
+  T = T*u.kelvin
+  eta = eta*u.kg/u.meter/u.sec
+  r = r*u.meter
+  return (kB*T/(6*np.pi*eta*r)).to_base_units()
+stokesEinstein(100,1,1)
 ```
 
 6. You have a pipe with a radius of 0.2 m with water flowing in it at 2 m<sup>3</sup>/s. You want to see how the Reynolds Number changes as viscosity changes due to a change in temperature from 0 to 200<sup>o</sup>C. Create a plot of Reynolds Number against Temperature in Kelvin to show a relationship. Make sure your plot has a title, labeled axes, and axes grid. You can use functions from `physchem` like `pc.re_pipe` and `pc.viscosity_kinematic`. *(Hint: Make an array of temperatures to input into the `pc.viscosity_kinematic` function)*. Make sure to save you plot to your images folder in your personal repository, and display it below using `plt.show()` and a relative file path to the image.
 
 <!--- Fill you answer here. --->
+```python
+from aide_design.play import*
+tempArr = []
+ReArr = []
+for i in range(0,201):
+  ReArr.append(pc.re_pipe(2*u.m**3/u.sec,2*0.2*u.m,pc.viscosity_kinematic(i*u.degC)))
+  tempArr.append(i)
+
+plt.plot(tempArr, ReArr, '-', label = 'Reynolds Number')
+plt.xlabel('Temperature in Celsius')
+plt.ylabel('Reynolds Number')
+plt.title('Reynolds Number at Various Temperatures')
+plt.minorticks_on()
+plt.grid(which = 'major')
+plt.grid(which = 'minor')
+plt.legend(loc = 'lower right', ncol = 1)
+plt.tight_layout()
+plt.savefig('./Images/ReynoldsPlot.png')
+plt.show()
+
+
+
+```
 
 # Teletype Basics
 In this section you and your team can practice using Teletype together.
@@ -288,8 +347,9 @@ In this section you and your team can practice using Teletype together.
 1. Create a portal for your team members to join. Have them write you words of  encouragement in the space below, and be sure they sign their name next to their encouragements.
 
 Good Job! - Victoria
+Your python code is horrendous. - Tigran Mehrabyan
 
-
+Thanks for helping me learn how to weld! -Desiree
 
 
 2. Have you other team members create a portal for you to join. In their Markdown file, write them something encouraging, and sign your name.
